@@ -1,14 +1,19 @@
 
 
-nome: str = str(input('Nome: '))
-media: float = float(input(f'Média de {nome}: '))
-if media >= 7:
-    situacao = 'Aprovado'
+alunos = dict()
+alunos['nome'] = str(input('Nome: '))
+alunos['media'] = float(input(f'Média de {alunos["nome"]}: '))
+
+
+if alunos['media'] >= 7:
+    alunos['situacao'] = 'Aprovado'
+elif alunos['media'] >= 5:
+    alunos['situacao'] = 'Em Recuperação'
 else:
-    situacao = 'Reprovado'
-    
-print(f'Nome é igual a {nome}')
-print(f'Média é igual a {media}')
-print(f'Situação é igual a {situacao}')
+    alunos['situacao'] = 'Reprovado'
+
+print('-=' * 30)
+for k, v in alunos.items():
+    print(f'{k} é igual a {v}')
 
 
